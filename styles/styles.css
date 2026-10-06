@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root{
+    --azul-petroleo: #18242A;
+    --branco: #FFFFFF;
+    --dourado-bronze: #BD9464;
+    --azul-escuro: #2A3B44;
+    --fonte-titulo: play
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #BD9464;
+    border-radius: 3px;
+}
+
+
+.menuBg{
+    background-color: var(--azul-escuro);
+}
+
+
+.logo span{
+    color: var(--dourado-bronze);
+}
