@@ -3,7 +3,7 @@
 :root{
     --azul-petroleo: #18242A;
     --branco: #FFFFFF;
-    --dourado-bronze: #BD9464;
+    --marrom: #BD9464;
     --azul-escuro: #2A3B44;
     --fonte-titulo: play
 }
@@ -17,7 +17,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #BD9464;
+    background: var(--marrom);
     border-radius: 3px;
 }
 
@@ -28,5 +28,6 @@
 
 
 .logo span{
-    color: var(--dourado-bronze);
+    color: var(--marrom);
 }
+
