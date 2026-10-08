@@ -333,10 +333,15 @@ h1, h2, h3, h4 {
     max-width: 20ch;
 }
 
+
 .textoSobre {
     color: var(--texto);
     max-width: 62ch;
     margin-top: 24px;
+}
+
+.sobreTextos h1, .sobreTextos p {
+    margin-top: 70px;
 }
 
 .citacao {
@@ -437,10 +442,6 @@ h1, h2, h3, h4 {
     transition: filter .3s;
 }
 
-.cardCasa:hover {
-    filter: brightness(1.1);
-}
-
 .cardCasa::after {
     content: "";
     position: absolute;
@@ -450,15 +451,15 @@ h1, h2, h3, h4 {
 
 .cardCasa1 {
     grid-row: span 2;
-    background-image: url(../img/destaque1.jpg), linear-gradient(160deg, #2A3B44, #18242A);
+    background-image: url(../images/destaque1.jpg), linear-gradient(160deg, #2A3B44, #18242A);
 }
 
 .cardCasa2 {
-    background-image: url(../img/destaque2.jpg), linear-gradient(160deg, #35505d, #18242A);
+    background-image: url(../images/destaque2.jpg), linear-gradient(160deg, #35505d, #18242A);
 }
 
 .cardCasa3 {
-    background-image: url(../img/destaque3.jpg), linear-gradient(160deg, #2A3B44, #0f181c);
+    background-image: url(../images/destaque3.jpg), linear-gradient(160deg, #2A3B44, #0f181c);
 }
 
 .textoCard {
