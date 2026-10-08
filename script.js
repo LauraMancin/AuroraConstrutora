@@ -1,3 +1,4 @@
+// DADOS DOS IMÓVEIS 
 const imoveis = [
     { id: 1, nome: "Casa Jardim Europa", tipo: "Casa", cidade: "Piracicaba - SP", status: "finalizada",
       quartos: 3, garagem: 2, banheiros: 3, metragem: 168, foto: "casa1",
@@ -28,13 +29,14 @@ const imoveis = [
 const rotulo = { finalizada: "Finalizada", andamento: "Em andamento" };
 
 
-// LISTA DOS IMÓVEIS
+// FILTRO DOS IMÓVEIS
 const lista = document.getElementById("listaImoveis");
 
 function mostrarImoveis(filtro) {
     let html = "";
 
     for (const i of imoveis) {
+        
         if (filtro !== "todos" && i.status !== filtro) continue;
 
         let detalhes = "";
@@ -88,10 +90,10 @@ if (form) {
 }
 
 
-// PÁGINA DO IMÓVEL
+// PÁGINA DO IMÓVEL 
 const detalhe = document.getElementById("detalhe");
 
-
+// Chamada pelos botões das miniaturas
 function trocarFoto(caminho) {
     document.getElementById("fotoPrincipal").src = caminho;
 }
@@ -104,7 +106,6 @@ if (detalhe) {
     }
     document.title = i.nome + " | Aurora Construtora";
 
-    //fotos do imóvel
     const fotos = [`images/${i.foto}.jpg`, `images/${i.foto}-2.jpg`, `images/${i.foto}-3.jpg`];
     let miniaturas = "";
     for (const f of fotos) {
@@ -116,46 +117,8 @@ if (detalhe) {
     let obra = "";
     if (i.status === "finalizada") {
         ficha += `<li><strong>${i.quartos}</strong>Quartos</li>
-                  <li><strong>${i.banheiros}</strong>Banheiros</li>
-                  <li><strong>${i.garagem}</strong>Vaga(s) de garagem</li>`;
+                <li><strong>${i.banheiros}</strong>Banheiros</li>
+                <li><strong>${i.garagem}</strong>Vaga(s) de garagem</li>`;
     } else {
         ficha += `<li><strong>${i.entrega}</strong>Previsão de entrega</li>`;
-        obra = `<div class="obra">
-                    <p>Obra ${i.progresso}% concluída</p>
-                    <div class="progresso"><div style="width:${i.progresso}%"></div></div>
-                </div>`;
-    }
-
-    let diferenciais = "";
-    for (const d of i.diferenciais) diferenciais += `<li>${d}</li>`;
-
-    const mensagem = encodeURIComponent("Olá! Tenho interesse no imóvel " + i.nome + ".");
-
-    detalhe.innerHTML = `
-        <a class="voltar" href="index.html#containerportifolio">Voltar aos projetos</a>
-        <div class="detalheGrid">
-            <div class="galeria">
-                <images class="fotoPrincipal" id="fotoPrincipal" src="${fotos[0]}" alt="${i.nome}">
-                <div class="miniaturas">${miniaturas}</div>
-            </div>
-            <div class="detalheInfo">
-                <span class="status ${i.status}">${rotulo[i.status]}</span>
-                <h1>${i.nome}</h1>
-                <p class="local">${i.tipo} · ${i.cidade}</p>
-                <p class="descricao">${i.descricao}</p>
-                ${obra}
-                <ul class="ficha">${ficha}</ul>
-                <ul class="diferenciais">${diferenciais}</ul>
-                <div class="locacaoBotoes">
-                    <a class="botaoProjetos" href="https://wa.me/5519900000000?text=${mensagem}" target="_blank" rel="noopener">Tenho interesse</a>
-                    <a class="botaoFale" href="index.html#containerContato">Enviar formulário</a>
-                </div>
-            </div>
-        </div>`;
-}
-
-
-const menu = document.querySelector(".menuBg");
-window.onscroll = function () {
-    menu.classList.toggle("rolou", window.scrollY > 40);
-};
+    }}
