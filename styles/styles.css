@@ -442,12 +442,27 @@ h1, h2, h3, h4 {
     transition: filter .3s;
 }
 
+.cardCasa::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+.cardCasa:hover {
+    transform: scale(1.02);
+    box-shadow: 0 24px 50px rgba(24, 36, 42, .14);
+}   
+
 .cardCasa::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(0deg, rgba(24, 36, 42, .85), transparent 60%);
 }
+
 
 .cardCasa1 {
     grid-row: span 2;
